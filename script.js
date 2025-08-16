@@ -12,10 +12,6 @@ document.addEventListener("click", (e) => {
 	console.log("Document clicked");
 });
 
-// document.html.addEventListener("click", (e) => {
-// 	console.log("HTML clicked");
-// });
-
 document.body.addEventListener("click", (e) => {
 	e.stopPropagation();
 	console.log("Body clicked");
@@ -31,7 +27,17 @@ pink.addEventListener("click", (e) => {
 	console.log("Pink clicked");
 });
 
-blue.addEventListener("click", (e) => {
-	e.stopPropagation();
-	console.log("Blue clicked");
-});
+// blue.addEventListener("click", (e) => {
+// 	e.stopPropagation();
+// 	console.log("Blue clicked");
+// });
+
+// For allowing the event listener to run only once
+blue.addEventListener(
+	"click",
+	(e) => {
+		e.stopPropagation();
+		console.log("Blue clicked");
+	},
+	{ once: true }
+);
